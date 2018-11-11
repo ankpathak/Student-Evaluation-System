@@ -1,6 +1,6 @@
 language: java
 jdk: oraclejdk8
-before_script: chmod +x gradlew
+before_install: chmod +x gradlew
 deploy:
         provider: heroku
         app: evening-refuge-46144
