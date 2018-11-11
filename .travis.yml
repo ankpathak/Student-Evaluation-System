@@ -1,9 +1,8 @@
 language: java
 jdk: oraclejdk8
+before_script: chmod +x gradlew
 deploy:
         provider: heroku
         app: evening-refuge-46144
         api_key:
                 secure: "1f3a7cae-76d9-45d9-b1fa-b3a8809d04d2"
-before_script:
-        - chmod +x gradlew
