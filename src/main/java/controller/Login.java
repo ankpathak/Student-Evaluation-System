@@ -12,12 +12,12 @@ public class Login {
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String login() {
-		return "index.html";
+		return "index";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signUp() {
-		return "Sign_Up.html";
+		return "Sign_Up";
 	}
 	
     @RequestMapping("/hello/{lastName}")
