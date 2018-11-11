@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Assignment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<style type="text/css">
+  		
+  		#Submitted th{
+  		    padding-top: 12px;
+    		padding-bottom: 12px;
+    		text-align: left;
+    		background-color: #3366ff;
+    		color: white;
+  			}
+  		#approved th{
+    		padding-top: 12px;
+    		padding-bottom: 12px;
+    		text-align: left;
+    		background-color: #4CAF50;
+    		color: white;
+  		}
+  		#rejected th{
+    		padding-top: 12px;
+    		padding-bottom: 12px;
+    		text-align: left;
+    		background-color: #e62e00;
+    		color: white;
+  		}
+  		#incomplete th{
+    		padding-top: 12px;
+    		padding-bottom: 12px;
+    		text-align: left;
+    		background-color: black;
+    		color: white;
+  		}
+  		#incomplete-btn{
+  			color: black;
+  		}
+  	</style>
+  	<script>
+  		
+  		$(document).ready(function(){
+  			$(".approved-btn").click(function(){
+  				alert("Assessment Agency is approved.");
+  				$(this).parents("tr").hide();
+  				$('#approved > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  			$(".rejected-btn").click(function(){
+  				alert("Assessment Agency is rejected.");
+  				$(this).parents("tr").hide();
+  				$('#rejected > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  			$(".incomplete-btn").click(function(){
+  				alert("Assessment Agency is rejected.");
+  				$(this).parents("tr").hide();
+  				$('#incomplete > tbody:last-child').append($(this).parents("tr").get()).show();
+  				$(this).parents("td").hide();
+  				$(this).parents("tr").show();
+  			});
+  		});
+  	</script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+            $.ajax({url: "/approvedfunction",success: function(result){
+                    $("h1").html(result);}});
+            });
+        }
+        );
+    </script>
+</head>
+<body>
+    <div class="container">
+    <center>
+        <button type="button" class="btn btn-success" >Test</button>
+        <h1>This is an heading</h1>
+    </center>
+
+    </div>
+    </body>
+</html>
+    
